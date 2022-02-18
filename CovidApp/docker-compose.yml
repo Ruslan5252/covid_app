@@ -1,0 +1,13 @@
+version: '20.10.12'
+
+
+services:
+  back-end:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - 8000:8000
+    depends_on:
+      - db
